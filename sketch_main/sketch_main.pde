@@ -17,7 +17,7 @@ PFont FONT_LOG;
 final color FONT_LOG_COLOR = #BE3214;
 
 PFont FONT_BUTTON;
-final color COLOR_BUTTON_TEXT       = #FFCC00;
+final color COLOR_BUTTON_TEXT       = WHITE;
 
 final color COLOR_BUTTON_ON_STROKE  = 0xff002D5A;
 final color COLOR_BUTTON_ON         = BLUE;
@@ -40,7 +40,7 @@ int i = 0;
 void setup(){
   FONT_TITLE  = createFont("Arial Black", 12);
   FONT_LOG    = createFont("Tahoma Bold", 10);
-  FONT_BUTTON = createFont("Verdana", 10);
+  FONT_BUTTON = createFont("Courier New Bold", 12);
   
   //smooth();
   background(0);

@@ -130,7 +130,7 @@ class CButton{
     
     textFont(_font);
     fill(_color_font);
-    text(_text, orig.x + DT, orig.y + DT, orig.x + size.x, orig.y + size.y);
+    text(_text, orig.x + 3*DT, orig.y + 2*DT, orig.x + size.x, orig.y + size.y);
   }
   
   Boolean IsHover(){
@@ -140,6 +140,8 @@ class CButton{
      return false;
   }
   
+  // Function void mouseClicked() has to be included somewhere and call this method
+  // for this service to be run
   void HandleClicks(){
     if (IsHover()) state = !state;
   }
