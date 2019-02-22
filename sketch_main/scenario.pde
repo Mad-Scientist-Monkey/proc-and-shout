@@ -4,6 +4,8 @@
 
 void InitScenario(int sx, int sy){
   
+  // Panels definitions
+  
   panels    = new CPanel[4];
   panels[0] = new CPanel(0, 0, sx, sy);
   panels[1] = new CPanel(DT, DT, 100*DT, sy-2*DT);
@@ -16,6 +18,18 @@ void InitScenario(int sx, int sy){
                          sx - panels[1].size.x - 3*DT,
                          sy - panels[2].size.y - 2*DT);
   
+  // Title labels definitions
+  title_labels    = new CLabel[3];
+  title_labels[0] = new CLabel(panels[1].orig.x + 2*DT, 
+                               panels[1].orig.y + 7*DT,
+                               "Events");
+  title_labels[1] = new CLabel(panels[2].orig.x + 2*DT, 
+                               panels[2].orig.y + 7*DT,
+                               "Environment");
+  title_labels[2] = new CLabel(panels[3].orig.x + 2*DT, 
+                               panels[3].orig.y + 7*DT,
+                               "Control");
+
 }
 
 void DisplayScenario(){
@@ -24,5 +38,6 @@ void DisplayScenario(){
   strokeWeight(2);
   noFill();
   
-  for (int i = 0; i<panels.length; i++) panels[i].drawRect();
+  for (int i = 0; i<panels.length; i++) panels[i].Show();
+  for (int i = 0; i<title_labels.length; i++) title_labels[i].Show();
 }

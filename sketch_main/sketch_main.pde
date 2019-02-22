@@ -12,6 +12,7 @@ final int DT = 2; // Delta used for distance between frames
 
 // Scenario variables
 CPanel[] panels;
+CLabel[] title_labels;
 
 // Special handlers
 public void settings(){size(SIZE_X, SIZE_Y);}
