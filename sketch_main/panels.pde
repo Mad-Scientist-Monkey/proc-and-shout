@@ -23,14 +23,21 @@ class CPanel{
 
 class CLabel{
     CPoint orig;
-    String label;
+    String _label;
+    PFont  _font = FONT_TITLE;
+    color  _color = FONT_TITLE_COLOR;
     
     CLabel(int ox, int oy, String plabel){
       orig  = new CPoint(ox, oy);
-      label = plabel;
+      _label = plabel;
     }
     
+    void SetFont(PFont pfont){_font = pfont;}
+    void SetColor(color pcolor){_color = pcolor;}
+    
     void Show(){
-      text(label, orig.x, orig.y);
+      textFont(_font);
+      fill(_color);
+      text(_label, orig.x, orig.y);
     }
 }
