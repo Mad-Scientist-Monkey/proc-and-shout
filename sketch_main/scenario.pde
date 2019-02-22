@@ -35,6 +35,12 @@ void InitScenario(int sx, int sy){
                                title_labels[0].orig.y + 3*DT,
                                panels[1].size.x - 14*DT,
                                panels[1].size.y - 20*DT);
+                               
+  // Buttons
+  monkeys = new CButton[1];
+  monkeys[0] =new CButton(panels[2].orig.x + 2*DT,
+                          title_labels[2].orig.y + 3*DT,
+                          100, 20, "Monkeys Do");
 
 }
 
@@ -46,5 +52,11 @@ void DisplayScenario(){
   
   for (int i = 0; i<panels.length; i++) panels[i].Show();
   for (int i = 0; i<title_labels.length; i++) title_labels[i].Show();
+  for (int i = 0; i<monkeys.length; i++) monkeys[i].Show();
+  
   event_log.Show();
+}
+
+void mouseClicked(){
+  for (int i = 0; i<monkeys.length; i++) monkeys[i].HandleClicks();
 }
