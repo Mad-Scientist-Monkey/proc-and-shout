@@ -12,17 +12,22 @@ final int DT = 2; // Delta used for distance between frames
 // Fonts
 PFont FONT_TITLE;
 final color FONT_TITLE_COLOR = #FFCC00;
+PFont FONT_LOG;
+final color FONT_LOG_COLOR = #BE3214;
 
 // Scenario variables
 CPanel[] panels;
 CLabel[] title_labels;
+CTextBox_Log event_log;
 
 // Special handlers
 public void settings(){size(SIZE_X, SIZE_Y);}
-
+int i = 0;
+  
 void setup(){
   FONT_TITLE = createFont("Arial Black", 12);
-    
+  FONT_LOG   = createFont("Tahoma Bold", 10);
+  
   //smooth();
   background(0);
   
@@ -33,10 +38,15 @@ void setup(){
   
   // Console messages
   //print(PFont.list());
+
+  event_log.Append(str(i++));
 }
 
 void draw(){
   background(0);
   DisplayScenario();
-  
+
+  // Console messages
+  event_log.Append(str(i++));
+
 }

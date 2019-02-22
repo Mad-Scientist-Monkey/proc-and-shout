@@ -29,6 +29,12 @@ void InitScenario(int sx, int sy){
   title_labels[2] = new CLabel(panels[3].orig.x + 2*DT, 
                                panels[3].orig.y + 7*DT,
                                "Control");
+                               
+  // Event Log
+  event_log = new CTextBox_Log(panels[1].orig.x + 2*DT,
+                               title_labels[0].orig.y + 3*DT,
+                               panels[1].size.x - 14*DT,
+                               panels[1].size.y - 20*DT);
 
 }
 
@@ -40,4 +46,5 @@ void DisplayScenario(){
   
   for (int i = 0; i<panels.length; i++) panels[i].Show();
   for (int i = 0; i<title_labels.length; i++) title_labels[i].Show();
+  event_log.Show();
 }
