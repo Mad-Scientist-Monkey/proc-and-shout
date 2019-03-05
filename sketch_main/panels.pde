@@ -45,14 +45,7 @@ class CLabel{
 class CTextBox{
    CPoint orig;
    CPoint size;
-   String _text = "abigobalabigobalabigobalabigobalabigobalabigobalabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal"+
-                  "\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\nabigobal\n";
+   String _text = "";
    PFont _font  = FONT_LOG;
    color _color = FONT_LOG_COLOR;
    

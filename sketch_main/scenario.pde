@@ -5,11 +5,26 @@
 class CButton0HAndler implements IGenericHandler{
   @Override
   public void HandleClicks(CButton src){
+    event_log.Append("Button0 clicked");
+    event_log.Append("Button0 state = "+src.state + ".");
     src.state = !src.state;
     if (src.state == true) 
-      src.SetText("Disconnect");
+      src.SetText("[ON] Disconnect");
     else 
-      src.SetText("Connect");
+      src.SetText("[OFF] Connect");
+  }
+}
+
+class CButton1HAndler implements IGenericHandler{
+  @Override
+  public void HandleClicks(CButton src){
+    event_log.Append("Button1 clicked");
+    event_log.Append("Button1 state = "+src.state + ".");
+    src.state = !src.state;
+    if (src.state == true) 
+      src.SetText("[ON] Disconnect");
+    else 
+      src.SetText("[OFF] Connect");
   }
 }
 
@@ -48,12 +63,15 @@ void InitScenario(int sx, int sy){
                                panels[1].size.y - 20*DT);
                                
   // Buttons
-  monkeys = new CButton[1];
+  monkeys = new CButton[2];
   monkeys[0] =new CButton(new CButton0HAndler(),
                           panels[2].orig.x + 2*DT,
                           title_labels[2].orig.y + 3*DT,
-                          100, 20, "Connect");
-
+                          140, 20, "[OFF] Connect");
+  monkeys[1] =new CButton(new CButton1HAndler(),
+                          monkeys[0].orig.x + monkeys[0].size.x + 2*DT,
+                          title_labels[2].orig.y + 3*DT,
+                          140, 20, "[OFF] Connect");
 }
 
 void DisplayScenario(){

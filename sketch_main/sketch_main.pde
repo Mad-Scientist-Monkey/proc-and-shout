@@ -38,6 +38,7 @@ public void settings(){size(SIZE_X, SIZE_Y);}
 int i = 0;
   
 void setup(){
+  
   FONT_TITLE  = createFont("Arial Black", 12);
   FONT_LOG    = createFont("Tahoma Bold", 10);
   FONT_BUTTON = createFont("Courier New Bold", 12);
@@ -53,7 +54,7 @@ void setup(){
   // Console messages
   //print(PFont.list());
 
-  event_log.Append(str(i++));
+  event_log.Append("Application initialized.");
 }
 
 void draw(){
@@ -61,6 +62,6 @@ void draw(){
   DisplayScenario();
 
   // Console messages
-  event_log.Append(str(i++));
+  //event_log.Append(str(i++));
 
 }
