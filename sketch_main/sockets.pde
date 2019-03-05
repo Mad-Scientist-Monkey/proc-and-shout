@@ -21,6 +21,16 @@ Boolean DisconnectClient(){
   return !client_connected;
 }
 
+Boolean IsClientConnected(){
+  return client_connected;
+}
+
+void ClientPut(String message){
+  if (client.active()){
+    client.write(message);
+  }
+}
+
 void clientEvent(Client someClient) {
   String dataIn;
   

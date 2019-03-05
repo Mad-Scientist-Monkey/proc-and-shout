@@ -26,14 +26,12 @@ class CButton0HAndler implements IGenericHandler {
 class CButton1HAndler implements IGenericHandler {
   @Override
     public void HandleClicks(CButton src) {
-    //event_log.Append("Button1 clicked");
-    src.state = !src.state;
-    if (src.state == true) 
-      src.SetText("[ON] Disconnect");
-    else 
-    src.SetText("[OFF] Connect");
-
-    event_log.Append("Button1 new state = "+src.state + ".");
+      event_log.Append("Button1 clicked");
+      if (IsClientConnected){
+        ClientPut("Processing message to be sent to server. Is it ok?");
+      }
+      
+      event_log.Append("Button1 new state = "+src.state + ".");
   }
 }
 
