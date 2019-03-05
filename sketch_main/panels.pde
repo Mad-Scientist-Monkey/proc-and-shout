@@ -79,11 +79,16 @@ class CTextBox_Log extends CTextBox{
    void Append(String t){_text = nf(hour(),2)+":"+nf(minute(),2)+":"+nf(second(),2)+">" + t + "\n" + _text;}
 }
 
+interface IGenericHandler{
+  void HandleClicks(CButton src);
+}
+
 class CButton{
   CPoint orig;
   CPoint size;
   String _text;
-  Boolean state = true;
+  Boolean state = false;
+  IGenericHandler _handler;
   
   PFont _font             = FONT_BUTTON;
   color _color_font       = COLOR_BUTTON_TEXT;
@@ -94,10 +99,11 @@ class CButton{
   color _color_off_stroke = COLOR_BUTTON_OFF_STROKE;
   color _color_off_hover  = COLOR_BUTTON_OFF_HOVER;
   
-  CButton(int ox, int oy, int sx, int sy, String ptext){
+  CButton(IGenericHandler handler, int ox, int oy, int sx, int sy, String ptext){
     orig = new CPoint(ox, oy);
     size = new CPoint(sx, sy);
     _text = ptext;
+    _handler = handler;
   }
    
   void SetFont(PFont pfont){_font = pfont;}
@@ -143,6 +149,6 @@ class CButton{
   // Function void mouseClicked() has to be included somewhere and call this method
   // for this service to be run
   void HandleClicks(){
-    if (IsHover()) state = !state;
+    if (IsHover()) _handler.HandleClicks(this);
   }
 }

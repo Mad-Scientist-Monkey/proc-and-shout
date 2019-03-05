@@ -2,6 +2,17 @@
    Sketch responsible for managing the scenario drawings
    ======================================================*/
 
+class CButton0HAndler implements IGenericHandler{
+  @Override
+  public void HandleClicks(CButton src){
+    src.state = !src.state;
+    if (src.state == true) 
+      src.SetText("Disconnect");
+    else 
+      src.SetText("Connect");
+  }
+}
+
 void InitScenario(int sx, int sy){
   
   // Panels definitions
@@ -38,9 +49,10 @@ void InitScenario(int sx, int sy){
                                
   // Buttons
   monkeys = new CButton[1];
-  monkeys[0] =new CButton(panels[2].orig.x + 2*DT,
+  monkeys[0] =new CButton(new CButton0HAndler(),
+                          panels[2].orig.x + 2*DT,
                           title_labels[2].orig.y + 3*DT,
-                          100, 20, "Monkeys Do");
+                          100, 20, "Connect");
 
 }
 
@@ -57,6 +69,7 @@ void DisplayScenario(){
   event_log.Show();
 }
 
+// Automatic event handler for mouse clicks
 void mouseClicked(){
-  for (int i = 0; i<monkeys.length; i++) monkeys[i].HandleClicks();
+  for (int i = 0; i<monkeys.length; i++) if (monkeys[i]._handler != null) monkeys[i].HandleClicks();
 }
